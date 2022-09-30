@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const FindEpisode = (props) => {
   const [name, setName] = useState();
@@ -8,7 +8,7 @@ const FindEpisode = (props) => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetchEpisodeByName('pilot');
+    fetchEpisodeByName("pilot");
   }, []);
 
   const fetchEpisodeByName = async (name) => {
@@ -30,21 +30,22 @@ const FindEpisode = (props) => {
   };
 
   return (
-    <div className='text-monospace'>
-      <button className='btn btn-secondary text-justify d-flex p-2 mx-4 mt-4'>
-        <Link to='/' className='text text-light'>
+    <div className="text-monospace">
+      <button className="btn btn-secondary text-justify d-flex p-2 mx-4 mt-4">
+        <Link to="/" className="text text-light">
           Find All The Episodes
         </Link>
       </button>
+      <img src="https://cutewallpaper.org/21/rick-and-morty-silhouette/Afbeeldingsresultaat-voor-rick-and-morty-in-2019-Rick-.jpg" />
       <h1>Rick And Morty</h1>
       <input
-        placeholder='Enter episode name'
-        className='rounded border border-success col-md-6 pt-2 pb-2 pl-2 ml-2 px-4 col-lg-6 text-success'
+        placeholder="Enter episode name"
+        className="rounded border border-success col-md-6 pt-2 pb-2 pl-2 ml-2 px-4 col-lg-6 text-success"
         value={name}
         onChange={(event) => setEpisodeName(event)}
       />
       <button
-        className='btn btn-success mt-3 ml-2 px-4 col-md-6'
+        className="btn btn-success mt-3 ml-2 px-4 col-md-6"
         onClick={() => fetchEpisodeByName(name)}
       >
         GO
@@ -52,17 +53,17 @@ const FindEpisode = (props) => {
 
       {error && (
         <div>
-          <h2 className='text-uppercase rounded mx-auto mt-5 p-3 bg-danger col-md-6'>
+          <h2 className="text-uppercase rounded mx-auto mt-5 p-3 bg-danger col-md-6">
             Enter correct name!
           </h2>
         </div>
       )}
 
-      <div className='text-center rounded border border-info col-md-6 mx-auto mt-5 pt-2 pb-2 pl-2 ml-2 px-4 col-lg-6'>
-        <h5 className='card-title'>{data.name}</h5>
-        <h6 className='card-subtitle mb-2 text-muted'>{data.episode}</h6>
-        <p className='card-text mb-2'>Air Date : {data.air_date}</p>
-        <p className='card-text'>
+      <div className="text-center rounded border border-info col-md-6 mx-auto mt-5 pt-2 pb-2 pl-2 ml-2 px-4 col-lg-6">
+        <h5 className="card-title">{data.name}</h5>
+        <h6 className="card-subtitle mb-2 text-muted">{data.episode}</h6>
+        <p className="card-text mb-2">Air Date : {data.air_date}</p>
+        <p className="card-text">
           Id : <a href={data.url}>{data.id}</a>
         </p>
       </div>

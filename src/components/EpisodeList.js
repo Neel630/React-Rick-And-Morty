@@ -4,7 +4,7 @@ import Post from "./Post";
 import Pagination from "./Pagination";
 import { Link } from "react-router-dom";
 
-const EpisodeList = props => {
+const EpisodeList = (props) => {
   const [posts, setPosts] = useState([]);
 
   const [loading, setLoading] = useState(true);
@@ -46,7 +46,7 @@ const EpisodeList = props => {
   const currentPosts = posts;
 
   //Change Page
-  const paginate = pageNumber => {
+  const paginate = (pageNumber) => {
     if (currentPage === pageNumber) {
       return;
     }
@@ -64,6 +64,7 @@ const EpisodeList = props => {
         </Link>
       </button>
       <div className="container mt-5 ">
+        <img src="https://cutewallpaper.org/21/rick-and-morty-silhouette/Afbeeldingsresultaat-voor-rick-and-morty-in-2019-Rick-.jpg" />
         <h1>Rick And Morty</h1>
         <h2 className="text-primary mb-3">EpisodeList</h2>
 
