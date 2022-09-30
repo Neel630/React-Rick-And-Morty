@@ -4,7 +4,7 @@ import Post from "./Post";
 import Pagination from "./Pagination";
 import { Link } from "react-router-dom";
 
-const EpisodeList = props => {
+const EpisodeList = (props) => {
   const [posts, setPosts] = useState([]);
 
   const [loading, setLoading] = useState(true);
@@ -14,6 +14,10 @@ const EpisodeList = props => {
   const [next, setNext] = useState(false);
 
   const [pageCount, setPageCount] = useState(0);
+
+  useEffect(() => {
+    fetchEpisodes();
+  }, []);
 
   const fetchEpisodes = async () => {
     setLoading(true);
@@ -38,15 +42,11 @@ const EpisodeList = props => {
     setLoading(false);
   };
 
-  useEffect(() => {
-    fetchEpisodes();
-  }, []);
-
   //Get Current Posts
   const currentPosts = posts;
 
   //Change Page
-  const paginate = pageNumber => {
+  const paginate = (pageNumber) => {
     if (currentPage === pageNumber) {
       return;
     }
