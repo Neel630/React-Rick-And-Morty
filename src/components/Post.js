@@ -7,14 +7,14 @@ const Post = ({ posts, loading }) => {
 
   return (
     <ul className="list-group mb-4">
-      {posts.map(post => (
+      {posts.map((post) => (
         <li key={post.id} className="list-group-item">
+          <p className="d-flex justify-content-start text-secondary h6">
+            <a href={post.url}>{post.id}</a>{" "}
+          </p>
           <h4>{post.episode}</h4>
           <h5>{post.name}</h5>
           {post.air_date}
-          <p>
-            Episode id is <a href={post.url}>{post.id}</a>{" "}
-          </p>
         </li>
       ))}
     </ul>
